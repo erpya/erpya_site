@@ -11,6 +11,7 @@ type ServicioData = {
   headline: { es: string; en: string }
   desc: { es: string; en: string }
   features: { es: string[]; en: string[] }
+  image?: string
 }
 
 const SERVICIOS: Record<string, ServicioData> = {
@@ -86,6 +87,19 @@ const SERVICIOS: Record<string, ServicioData> = {
     desc: { es: 'Olvídese de cargar tasas a mano. Cada mañana, nuestra integración consulta el portal del Banco Central de Venezuela y actualiza la tasa en su ERP.', en: 'Forget loading rates manually. Every morning, our integration queries the Central Bank of Venezuela portal and updates the rate in your ERP.' },
     features: { es: ['USD, EUR y otras divisas', 'Tasa oficial diaria', 'Carga programada automática', 'Histórico completo', 'Alertas de variación', 'Aplicable a documentos', 'Sin intervención manual', 'Disponibilidad 24/7'], en: ['USD, EUR and other currencies', 'Daily official rate', 'Scheduled automatic load', 'Full history', 'Variation alerts', 'Applicable to documents', 'No manual intervention', '24/7 availability'] },
   },
+  'seniat-homologacion': {
+    badgeKey: 'local',
+    headline: { es: 'Homologación del SENIAT', en: 'SENIAT Homologation' },
+    desc: { es: 'Nuestra solución ADempiere ERP está oficialmente autorizada y homologada por el SENIAT para la emisión de facturas y otros documentos fiscales en Venezuela según Providencia Administrativa N° SNAT/2024/000121.', en: 'Our ADempiere ERP solution is officially authorized and homologated by the SENIAT for issuing invoices and other tax documents in Venezuela according to Administrative Providence No. SNAT/2024/000121.' },
+    features: { es: ['Autorización oficial del SENIAT', 'Cumplimiento normativo vigente', 'Emisión de documentos fiscales', 'Seguridad y auditoría', 'Respaldo legal'], en: ['Official SENIAT authorization', 'Current regulatory compliance', 'Tax document issuance', 'Security and auditing', 'Legal backing'] },
+    image: '/seniat-homologacion.png'
+  },
+  'the-factory-hk': {
+    badgeKey: 'local',
+    headline: { es: 'Facturación Electrónica con The Factory HK', en: 'Electronic Invoicing with The Factory HK' },
+    desc: { es: 'Integramos su ERP directamente con The Factory HK para la emisión automática de facturas electrónicas, cumpliendo con todas las normativas fiscales sin procesos manuales.', en: 'We integrate your ERP directly with The Factory HK for automatic issuance of electronic invoices, complying with all tax regulations without manual processes.' },
+    features: { es: ['Integración directa ERP', 'Emisión automática', 'Validación en tiempo real', 'Cumplimiento fiscal', 'Reducción de errores', 'Manejo de contingencias'], en: ['Direct ERP integration', 'Automatic issuance', 'Real-time validation', 'Tax compliance', 'Error reduction', 'Contingency management'] },
+  },
 }
 
 const BADGE_LABELS: Record<string, { es: string; en: string }> = {
@@ -103,6 +117,7 @@ const TITLE_LABELS: Record<string, string> = {
   n8n: 'N8N', pentaho: 'Pentaho',
   'ai-docs': 'IA · Documentos', 'ai-quotes': 'IA · Cotizaciones', 'ai-bank': 'IA · Extractos',
   seniat: 'SENIAT', bcv: 'BCV',
+  'seniat-homologacion': 'Homologación SENIAT', 'the-factory-hk': 'The Factory HK'
 }
 
 export default function Servicio() {
@@ -119,7 +134,15 @@ export default function Servicio() {
     <div>
       <PageHero badge={badge} title={headline} subtitle={desc} cta1={t('servicio', 'cta')} />
 
-      <Section>
+      {data.image && (
+        <Section>
+          <div className="max-w-4xl mx-auto flex justify-center">
+            <img src={data.image} alt={headline} className="rounded-xl border border-border shadow-xl max-w-full h-auto" />
+          </div>
+        </Section>
+      )}
+
+      <Section alt={!data.image}>
         <h2 className="text-base font-bold text-foreground mb-4">{t('servicio', 'includes')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2.5">
           {features.map((f, i) => (
