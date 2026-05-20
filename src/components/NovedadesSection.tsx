@@ -36,6 +36,16 @@ const ITEMS: NovedadItem[] = [
     descEs: 'Tasas bancarias diarias cargadas cada mañana desde el portal del BCV.',
     descEn: 'Daily bank rates loaded every morning from the BCV portal.',
     Icon: Banknote },
+  { to: '/seniat-homologacion', tagEs: 'SENIAT', tagEn: 'SENIAT',
+    titleEs: 'Homologación del SENIAT', titleEn: 'SENIAT Homologation',
+    descEs: 'ADempiere ERP autorizado oficialmente por el SENIAT para facturación electrónica.',
+    descEn: 'ADempiere ERP officially authorized by SENIAT for electronic invoicing.',
+    Icon: Building2 },
+  { to: '/the-factory-hk', tagEs: 'Facturación', tagEn: 'Invoicing',
+    titleEs: 'The Factory HK', titleEn: 'The Factory HK',
+    descEs: 'Integración directa para emisión automática de facturas electrónicas fiscales.',
+    descEn: 'Direct integration for automatic issuance of electronic tax invoices.',
+    Icon: Banknote },
 ]
 
 export default function NovedadesSection() {
