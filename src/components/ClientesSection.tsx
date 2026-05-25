@@ -84,7 +84,7 @@ export default function ClientesSection() {
               src={client.logo}
               alt={client.name}
               title={client.name}
-              className="max-h-full max-w-full object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"
+              className="max-h-full max-w-full object-contain transition-all duration-300 ease-in-out"
             />
           </motion.div>
         ))}
