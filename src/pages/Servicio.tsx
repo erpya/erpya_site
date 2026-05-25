@@ -99,6 +99,7 @@ const SERVICIOS: Record<string, ServicioData> = {
     headline: { es: 'Facturación Electrónica con The Factory HK', en: 'Electronic Invoicing with The Factory HK' },
     desc: { es: 'Integramos su ERP directamente con The Factory HK para la emisión automática de facturas electrónicas, cumpliendo con todas las normativas fiscales sin procesos manuales.', en: 'We integrate your ERP directly with The Factory HK for automatic issuance of electronic invoices, complying with all tax regulations without manual processes.' },
     features: { es: ['Integración directa ERP', 'Emisión automática', 'Validación en tiempo real', 'Cumplimiento fiscal', 'Reducción de errores', 'Manejo de contingencias'], en: ['Direct ERP integration', 'Automatic issuance', 'Real-time validation', 'Tax compliance', 'Error reduction', 'Contingency management'] },
+    image: '/the-factory-hk.png'
   },
 }
 

@@ -203,4 +203,20 @@ export const COVERAGE_DATA: Record<string, CoverageData> = {
         itemsEn: ['Scheduled automatic load', 'No manual intervention', 'Variation alerts', '24/7 availability'] },
     ],
   },
+  'the-factory-hk': {
+    titleEs: 'Cobertura del servicio', titleEn: 'Service Coverage',
+    subtitleEs: 'Todo lo que incluye nuestra integración de facturación electrónica con The Factory HK.',
+    subtitleEn: 'Everything included in our electronic invoicing integration with The Factory HK.',
+    groups: [
+      { labelEs: 'Facturación y Emisión', labelEn: 'Billing & Issuance',
+        itemsEs: ['Facturación Electrónica en línea', 'Notas de Débito y Crédito', 'Anulación automática de documentos', 'Manejo de contingencias fiscales', 'Reimpresión y consulta de documentos'],
+        itemsEn: ['Online Electronic Invoicing', 'Debit & Credit Notes', 'Automatic document cancellation', 'Tax contingency handling', 'Document reprinting & lookup'] },
+      { labelEs: 'Integración Fiscal', labelEn: 'Tax Integration',
+        itemsEs: ['Firma digital de documentos', 'Envío automático al portal del SENIAT', 'Validación de estatus en tiempo real', 'Soporte multimoneda fiscal', 'Cálculo automatizado de impuestos venezolanos'],
+        itemsEn: ['Digital document signing', 'Automatic upload to SENIAT portal', 'Real-time status validation', 'Tax-compliant multi-currency', 'Automated Venezuelan tax calculation'] },
+      { labelEs: 'Tecnología y Seguridad', labelEn: 'Technology & Security',
+        itemsEs: ['API REST y Web Services', 'Logs completos de auditoría fiscal', 'Conexión SSL encriptada', 'Cola de reintentos automáticos', 'Actualizaciones normativas automáticas', 'Soporte especializado ERPyA'],
+        itemsEn: ['REST API & Web Services', 'Complete tax audit logs', 'Encrypted SSL connection', 'Automatic retry queue', 'Automatic regulatory updates', 'Specialized ERPyA support'] },
+    ],
+  },
 }
