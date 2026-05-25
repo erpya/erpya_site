@@ -51,6 +51,8 @@ const SERVICIOS_MENU: MenuSection[] = [
     { to: '/ai-quotes', labelEs: 'IA · Análisis de Cotizaciones', labelEn: 'AI · Quote Analysis', descEs: 'Compara cotizaciones con IA',    descEn: 'Compare quotes with AI',         Icon: MessageSquare },
     { to: '/ai-bank',   labelEs: 'IA · Extractos Bancarios',  labelEn: 'AI · Bank Statements',   descEs: 'Conciliación con IA',               descEn: 'AI reconciliation',              Icon: Database },
     { to: '/seniat',    labelEs: 'Captura SENIAT',            labelEn: 'SENIAT Capture',          descEs: 'Datos de socios desde el portal',     descEn: 'Partner data from the portal',   Icon: Building2 },
+    { to: '/seniat-homologacion', labelEs: 'Homologación SENIAT', labelEn: 'SENIAT Homologation', descEs: 'ADempiere ERP Autorizado',        descEn: 'Authorized ADempiere ERP',       Icon: Building2 },
+    { to: '/the-factory-hk', labelEs: 'Facturación Electrónica',  labelEn: 'Electronic Invoicing',descEs: 'Integración The Factory HK',      descEn: 'The Factory HK Integration',     Icon: Banknote },
     { to: '/bcv',       labelEs: 'Tasas BCV',                 labelEn: 'BCV Rates',               descEs: 'Tasas bancarias diarias automáticas', descEn: 'Daily automatic bank rates',     Icon: Banknote },
   ]},
 ]

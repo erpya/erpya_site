@@ -39,6 +39,7 @@ export default function Adempiere() {
         subtitle={t('adempiere', 'sub')}
         cta1={t('adempiere', 'cta1')}
         cta2={t('adempiere', 'cta2')}
+        onCta2={() => window.open('https://docs.erpya.com/', '_blank')}
       />
       <StatsBar stats={[
         { value: '+100', label: lang === 'en' ? 'Companies implemented' : 'Empresas implementadas' },

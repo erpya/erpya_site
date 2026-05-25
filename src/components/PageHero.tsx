@@ -16,7 +16,13 @@ type PageHeroProps = {
 
 export function PageHero({ badge, title, titleAccent, subtitle, cta1, cta2, onCta1, onCta2, children }: PageHeroProps) {
   const handleCta1 = onCta1 || (() => window.open('https://wa.me/584122223824', '_blank'))
-  const handleCta2 = onCta2 || (() => window.open('https://wa.me/584122223824', '_blank'))
+  const handleCta2 = onCta2 || (() => {
+    if (cta2 && (cta2.toLowerCase().includes('documentaci') || cta2.toLowerCase().includes('documentat'))) {
+      window.open('https://docs.erpya.com/', '_blank')
+    } else {
+      window.open('https://wa.me/584122223824', '_blank')
+    }
+  })
 
   return (
     <div
