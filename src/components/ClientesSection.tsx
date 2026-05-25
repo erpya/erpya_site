@@ -4,7 +4,7 @@ import { Section } from './PageHero'
 
 // Importación de logos
 import logoMary from '../assets/Logo Alimentos Mary.webp'
-import logoMasia from '../assets/Logo Alimentos Masia.png'
+import logoMasia from '../assets/Logo Alimentos Masia.jpeg'
 import logoChispa from '../assets/Logo Arrocera Chispa.png'
 import logoCaivet from '../assets/Logo Caivet.png'
 import logoAmapola from '../assets/Logo Industrias Amapola.png'
