@@ -19,6 +19,9 @@ const ES = {
     novedadesTitle: 'Lo nuevo en ERPyA',
     novedadesSub: 'Nuevas capacidades con IA e integraciones locales para hacer tu ERP más inteligente cada día.',
     learnMore: 'Saber más',
+    clientsEyebrow: 'Nuestros Clientes',
+    clientsTitle: 'Empresas que confían en nosotros',
+    clientsSub: 'Colaboramos con organizaciones líderes para impulsar su crecimiento con soluciones tecnológicas de clase mundial.',
   },
   adempiere: {
     badge: 'ERPs · ADempiere',
@@ -105,6 +108,9 @@ const EN: Translations = {
     novedadesTitle: 'Latest from ERPyA',
     novedadesSub: 'New AI capabilities and local integrations to make your ERP smarter every day.',
     learnMore: 'Learn more',
+    clientsEyebrow: 'Our Clients',
+    clientsTitle: 'Companies that trust us',
+    clientsSub: 'We collaborate with leading organizations to drive their growth with world-class technological solutions.',
   },
   adempiere: {
     badge: 'ERPs · ADempiere',

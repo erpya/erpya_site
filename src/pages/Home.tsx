@@ -5,6 +5,7 @@ import { useI18n } from '../lib/i18n'
 import EcosystemDiagram from '../components/EcosystemDiagram'
 import { StatsBar } from '../components/PageHero'
 import NovedadesSection from '../components/NovedadesSection'
+import ClientesSection from '../components/ClientesSection'
 
 export default function Home() {
   const { t, lang } = useI18n()
@@ -96,6 +97,7 @@ export default function Home() {
       </div>
 
       <NovedadesSection />
+      <ClientesSection />
 
       <StatsBar stats={[
         { value: '+100', label: t('home', 'statsCompanies') },
