@@ -1,4 +1,3 @@
-import { motion, type Variants } from 'framer-motion'
 import { useI18n } from '../lib/i18n'
 import { Section } from './PageHero'
 
@@ -12,6 +11,7 @@ import logoMaros from '../assets/Logo Industrias Maros.jpeg'
 import logoAnca from '../assets/Logo_Anca.png'
 import logoInalsa from '../assets/logo-inalsa.png'
 import logoProsein from '../assets/logo-prosein.jpg'
+import logoFple from '../assets/laespecial.png'
 
 const CLIENTS = [
   { name: 'Alimentos Mary', logo: logoMary },
@@ -23,36 +23,18 @@ const CLIENTS = [
   { name: 'Anca', logo: logoAnca },
   { name: 'Inalsa', logo: logoInalsa },
   { name: 'Prosein', logo: logoProsein },
+  { name: 'La Especial', logo: logoFple },
 ]
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.06,
-    },
-  },
-}
-
-const itemVariants: Variants = {
-  hidden: { y: 16, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      type: 'spring',
-      stiffness: 100,
-      damping: 16,
-    },
-  },
-}
+// Duplicamos la lista para el loop continuo
+const TRACK = [...CLIENTS, ...CLIENTS, ...CLIENTS]
 
 export default function ClientesSection() {
   const { t } = useI18n()
 
   return (
-    <Section alt={true} className="py-16">
+    <Section alt={true} className="py-16 overflow-hidden">
+      {/* Encabezado */}
       <div className="mb-10 text-center md:text-left">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-cyan/20 text-brand-navy dark:text-brand-cyan text-[11px] font-bold uppercase tracking-wider mb-2.5">
           <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan shadow-[0_0_8px_rgba(26,170,212,0.8)]" />
@@ -66,29 +48,32 @@ export default function ClientesSection() {
         </p>
       </div>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-60px' }}
-        className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-9 gap-4 items-stretch"
-      >
-        {CLIENTS.map((client, i) => (
-          <motion.div
-            key={i}
-            variants={itemVariants}
-            whileHover={{ y: -4, scale: 1.02 }}
-            className="flex items-center justify-center p-4 bg-white rounded-xl border border-slate-200/80 shadow-[0_2px_8px_rgba(13,33,103,0.03)] hover:shadow-[0_12px_24px_rgba(26,170,212,0.12)] hover:border-brand-cyan/40 transition-all duration-300 group h-24 sm:h-28"
-          >
-            <img
-              src={client.logo}
-              alt={client.name}
-              title={client.name}
-              className="max-h-full max-w-full object-contain transition-all duration-300 ease-in-out"
-            />
-          </motion.div>
-        ))}
-      </motion.div>
+      {/* Carrusel marquee */}
+      <div className="relative w-full">
+
+
+        {/* Pista animada */}
+        <div
+          className="flex gap-4 clients-marquee"
+          style={{ width: 'max-content' }}
+        >
+          {TRACK.map((client, i) => (
+            <div
+              key={i}
+              className="flex-shrink-0 flex items-center justify-center p-5 bg-white rounded-xl border border-slate-200 shadow-[0_2px_10px_rgba(13,33,103,0.07)] hover:shadow-[0_12px_28px_rgba(26,170,212,0.20)] hover:border-brand-cyan/40 hover:scale-110 transition-all duration-300 group"
+              style={{ width: 168, height: 104 }}
+            >
+              <img
+                src={client.logo}
+                alt={client.name}
+                title={client.name}
+                className="max-h-full max-w-full object-contain transition-all duration-300 ease-in-out"
+                style={{ maxHeight: 64, maxWidth: 128 }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </Section>
   )
 }
