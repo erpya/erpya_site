@@ -5,6 +5,7 @@ import { Section } from './PageHero'
 // Importación de logos
 import logoMary from '../assets/Logo Alimentos Mary.webp'
 import logoMasia from '../assets/Logo Alimentos Masia.jpeg'
+import logoPastaEspecial from '../assets/Logo Fabrica de Pastas La especial.jpeg'
 import logoChispa from '../assets/Logo Arrocera Chispa.png'
 import logoCaivet from '../assets/Logo Caivet.png'
 import logoAmapola from '../assets/Logo Industrias Amapola.png'
@@ -16,6 +17,7 @@ import logoProsein from '../assets/logo-prosein.jpg'
 const CLIENTS = [
   { name: 'Alimentos Mary', logo: logoMary },
   { name: 'Alimentos Masia', logo: logoMasia },
+  { name: 'Fábrica de Pastas La Especial', logo: logoPastaEspecial },
   { name: 'Arrocera Chispa', logo: logoChispa },
   { name: 'Caivet', logo: logoCaivet },
   { name: 'Industrias Amapola', logo: logoAmapola },
