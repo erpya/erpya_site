@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { motion, Variants } from 'framer-motion'
+import { motion, type Variants } from 'framer-motion'
 import { ArrowRight, BarChart3, Box, Cloud, Layers, ShieldCheck, Zap } from 'lucide-react'
 import macbookFront from '../assets/macbook_front.svg'
 import laptopAdempiere from '../assets/laptop-adempiere.png'
