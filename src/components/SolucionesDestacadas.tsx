@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { ArrowRight, BarChart3, Box, Cloud, Layers, ShieldCheck, Zap } from 'lucide-react'
 import macbookFront from '../assets/macbook_front.svg'
 import laptopAdempiere from '../assets/laptop-adempiere.png'
@@ -16,7 +16,7 @@ const ADEMPIERE_FEATURES = [
   { icon: Zap,          label: 'Automatización contable y fiscal avanzada' },
 ]
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden:  { opacity: 0, y: 32 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
 }
