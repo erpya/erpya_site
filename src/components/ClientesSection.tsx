@@ -12,6 +12,10 @@ import logoAnca from '../assets/Logo_Anca.png'
 import logoInalsa from '../assets/logo-inalsa.png'
 import logoProsein from '../assets/logo-prosein.jpg'
 import logoFple from '../assets/laespecial.png'
+import logoAgrosilos from '../assets/Logo Agrosilos.png'
+import logoFaparca from '../assets/logo_faparca.png'
+import logoElmor from '../assets/Logo elmor.png'
+import logoTodoagro from '../assets/Logo Todoagro.jpeg'
 
 const CLIENTS = [
   { name: 'Alimentos Mary', logo: logoMary },
@@ -24,6 +28,10 @@ const CLIENTS = [
   { name: 'Inalsa', logo: logoInalsa },
   { name: 'Prosein', logo: logoProsein },
   { name: 'La Especial', logo: logoFple },
+  { name: 'Agrosilos', logo: logoAgrosilos },
+  { name: 'Faparca', logo: logoFaparca },
+  { name: 'Elmor', logo: logoElmor },
+  { name: 'Todoagro', logo: logoTodoagro },
 ]
 
 // Duplicamos la lista para el loop continuo
