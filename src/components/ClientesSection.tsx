@@ -41,7 +41,7 @@ export default function ClientesSection() {
   const { t } = useI18n()
 
   return (
-    <Section alt={true} className="py-16 overflow-hidden">
+    <Section alt={true} className="py-16">
       {/* Encabezado */}
       <div className="mb-10 text-center md:text-left">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-cyan/20 text-brand-navy dark:text-brand-cyan text-[11px] font-bold uppercase tracking-wider mb-2.5">
@@ -57,7 +57,7 @@ export default function ClientesSection() {
       </div>
 
       {/* Carrusel marquee */}
-      <div className="relative w-full">
+      <div className="relative w-full overflow-hidden">
 
 
         {/* Pista animada */}
