@@ -1,12 +1,13 @@
 import {
   BarChart3, ShoppingCart, Users, Settings, Package, Shield, Wrench,
-  Truck, Landmark,
+  Truck, Landmark, ShieldCheck, Box, Zap,
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useI18n } from '../lib/i18n'
 import { PageHero, StatsBar, Section, SectionHeading, CtaBanner } from '../components/PageHero'
 import CoverageTable from '../components/CoverageTable'
 import { COVERAGE_DATA } from './coverage-data'
+import laptopAdempiere from '../assets/laptop-adempiere.png'
 
 const FEATURES = [
   { Icon: BarChart3,     keyEs:'Gestión Financiera', keyEn:'Financial Management', descEs:'Control contable exacto para empresas de cualquier tamaño.', descEn:'Precise accounting control for any size company.' },
@@ -30,6 +31,13 @@ const INDUSTRIES = [
 
 export default function Adempiere() {
   const { lang, t } = useI18n()
+
+  const platformFeatures = [
+    { Icon: ShieldCheck, label: t('adempiere', 'platformFeature1') },
+    { Icon: Box,         label: t('adempiere', 'platformFeature2') },
+    { Icon: Zap,         label: t('adempiere', 'platformFeature3') },
+  ]
+
   return (
     <div>
       <PageHero
@@ -48,7 +56,49 @@ export default function Adempiere() {
         { value: '10+',  label: lang === 'en' ? 'Countries served' : 'Países atendidos' },
       ]} />
 
+      {/* Platform visual card */}
       <Section>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.55, ease: 'easeOut' }}
+          className="group relative flex flex-col rounded-2xl overflow-hidden border border-slate-200 dark:border-border bg-white dark:bg-card shadow-[0_4px_24px_rgba(13,33,103,0.07)] hover:shadow-[0_16px_48px_rgba(26,170,212,0.15)] transition-shadow duration-500"
+        >
+          <div
+            className="relative flex items-end justify-center pt-10 px-8 overflow-hidden min-h-[320px]"
+            style={{
+              background:
+                'radial-gradient(ellipse at 40% 0%, rgba(26,170,212,0.14) 0%, transparent 65%), linear-gradient(160deg, #08122A 0%, #0D2167 100%)',
+            }}
+          >
+            <img
+              src={laptopAdempiere}
+              alt="ADempiere ERP"
+              className="relative w-full max-w-[480px] object-contain translate-y-4 group-hover:translate-y-1 transition-transform duration-500"
+              style={{ clipPath: 'inset(4px)' }}
+            />
+          </div>
+          <div className="flex flex-col p-7">
+            <h3 className="text-2xl font-extrabold text-foreground mb-1">ADempiere ERP</h3>
+            <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
+              {t('adempiere', 'platformDesc')}
+            </p>
+            <ul className="space-y-2.5 mb-2">
+              {platformFeatures.map(({ Icon, label }) => (
+                <li key={label} className="flex items-center gap-3 text-sm text-foreground/80">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-cyan/10 text-brand-cyan">
+                    <Icon size={14} />
+                  </span>
+                  {label}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </motion.div>
+      </Section>
+
+      <Section alt>
         <SectionHeading title={t('adempiere', 'features')} sub={t('adempiere', 'featuresSub')} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-9 gap-y-0">
           {FEATURES.map((f, i) => {
