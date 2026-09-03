@@ -7,6 +7,7 @@ import Odoo from './pages/Odoo'
 import Servicio from './pages/Servicio'
 import Nube from './pages/Nube'
 import Nosotros from './pages/Nosotros'
+import ErpAiKnowledge from './pages/ErpAiKnowledge'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="odoo" element={<Odoo />} />
             <Route path="nube" element={<Nube />} />
             <Route path="nosotros" element={<Nosotros />} />
+            <Route path="erp-ai-knowledge" element={<ErpAiKnowledge />} />
             {/* Catch-all for service detail pages */}
             <Route path=":serviceId" element={<Servicio />} />
           </Route>
