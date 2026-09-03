@@ -14,7 +14,7 @@ export const SERVICE_IDS = [
   "docker", "kubernetes", "nube",
   "powerbi", "superset",
   "n8n", "pentaho",
-  "ai-docs", "ai-quotes", "ai-bank", "seniat", "seniat-homologacion", "the-factory-hk", "bcv",
+  "erp-ai-knowledge", "ai-docs", "ai-quotes", "ai-bank", "seniat", "seniat-homologacion", "the-factory-hk", "bcv",
 ] as const
 
 export type ServiceId = (typeof SERVICE_IDS)[number]
