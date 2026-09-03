@@ -114,7 +114,7 @@ export default function ErpAiKnowledge() {
             </p>
             <div className="mt-7 inline-flex items-center gap-2 rounded-lg border border-primary/15 bg-primary/5 px-4 py-3 text-sm font-semibold text-primary">
               <span className="h-2 w-2 animate-pulse rounded-full bg-brand-cyan" />
-              {lang === 'en' ? 'Concept currently in development' : 'Concepto actualmente en desarrollo'}
+              {lang === 'en' ? 'Concept currently in beta' : 'Concepto actualmente en modo beta'}
             </div>
           </motion.div>
         </div>
