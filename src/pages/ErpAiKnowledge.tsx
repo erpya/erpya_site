@@ -12,7 +12,7 @@ import { useI18n } from '../lib/i18n'
 
 const COPY = {
   es: {
-    badge: 'En desarrollo · ERP AI Knowledge',
+    badge: 'ERP AI Knowledge',
     title: 'Convierte cada cambio de software en conocimiento que permanece.',
     subtitle: 'Estamos desarrollando una memoria técnica inteligente que comprende el contexto de tus repositorios, acompaña las decisiones del equipo y reutiliza lo aprendido en el próximo desafío.',
     heroCta: 'Conocer el proyecto',
@@ -35,7 +35,7 @@ const COPY = {
     closeCta: 'Quiero conocer el avance',
   },
   en: {
-    badge: 'In development · ERP AI Knowledge',
+    badge: 'ERP AI Knowledge',
     title: 'Turn every software change into knowledge that lasts.',
     subtitle: 'We are building an intelligent technical memory that understands repository context, supports team decisions and reuses what was learned in the next challenge.',
     heroCta: 'Discover the project',
