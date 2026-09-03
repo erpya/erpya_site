@@ -4,7 +4,7 @@ import {
   Sun, Moon, Menu, X, ChevronDown,
   BarChart3, Settings, Server, Layers, Cloud,
   PieChart, Globe, Workflow, Database,
-  FileText, MessageSquare, Building2, Banknote,
+  FileText, MessageSquare, Building2, Banknote, BrainCircuit,
   MapPin, Mail, Phone,
 } from 'lucide-react'
 import { useI18n } from '../lib/i18n'
@@ -47,6 +47,7 @@ const SERVICIOS_MENU: MenuSection[] = [
     { to: '/pentaho', labelEs: 'Pentaho', labelEn: 'Pentaho', descEs: 'ETL y analítica de datos',  descEn: 'ETL and data analytics',   Icon: Database },
   ]},
   { section: 'Novedades', sectionEn: "What's New", items: [
+    { to: '/erp-ai-knowledge', labelEs: 'ERP AI Knowledge', labelEn: 'ERP AI Knowledge', descEs: 'Memoria técnica para equipos de software', descEn: 'Technical memory for software teams', Icon: BrainCircuit },
     { to: '/ai-docs',   labelEs: 'IA · Carga de Documentos',  labelEn: 'AI · Document Capture',  descEs: 'Facturas y órdenes con IA',          descEn: 'Invoices & POs with AI',         Icon: FileText },
     { to: '/ai-quotes', labelEs: 'IA · Análisis de Cotizaciones', labelEn: 'AI · Quote Analysis', descEs: 'Compara cotizaciones con IA',    descEn: 'Compare quotes with AI',         Icon: MessageSquare },
     { to: '/ai-bank',   labelEs: 'IA · Extractos Bancarios',  labelEn: 'AI · Bank Statements',   descEs: 'Conciliación con IA',               descEn: 'AI reconciliation',              Icon: Database },
