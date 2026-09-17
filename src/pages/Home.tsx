@@ -10,9 +10,11 @@ import ClientesSection from '../components/ClientesSection'
 export default function Home() {
   const { t, lang } = useI18n()
   const navigate = useNavigate()
-  const proofPoints = lang === 'en'
-    ? ['ERP implementation', 'BI and analytics', 'Cloud infrastructure']
-    : ['Implementación ERP', 'BI y analítica', 'Infraestructura cloud']
+  const proofPoints = [
+    t('home', 'proofPoint1'),
+    t('home', 'proofPoint2'),
+    t('home', 'proofPoint3'),
+  ]
 
   return (
     <div>

@@ -16,6 +16,7 @@ import logoAgrosilos from '../assets/Logo Agrosilos.png'
 import logoFaparca from '../assets/logo_faparca.png'
 import logoElmor from '../assets/Logo elmor.png'
 import logoTodoagro from '../assets/Logo Todoagro.jpeg'
+import logoErpConsultores from '../assets/ERP-logotipo-H-color.png'
 
 const CLIENTS = [
   { name: 'Alimentos Mary', logo: logoMary },
@@ -32,6 +33,7 @@ const CLIENTS = [
   { name: 'Faparca', logo: logoFaparca },
   { name: 'Elmor', logo: logoElmor },
   { name: 'Todoagro', logo: logoTodoagro },
+  { name: 'ERP Consultores y Asociados', logo: logoErpConsultores },
 ]
 
 // Duplicamos la lista para el loop continuo
