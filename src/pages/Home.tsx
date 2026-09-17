@@ -4,7 +4,6 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { useI18n } from '../lib/i18n'
 import EcosystemDiagram from '../components/EcosystemDiagram'
 import { StatsBar } from '../components/PageHero'
-import SolucionesDestacadas from '../components/SolucionesDestacadas'
 import NovedadesSection from '../components/NovedadesSection'
 import ClientesSection from '../components/ClientesSection'
 
@@ -99,7 +98,6 @@ export default function Home() {
         </div>
       </div>
 
-      <SolucionesDestacadas />
       <NovedadesSection />
       <ClientesSection />
 

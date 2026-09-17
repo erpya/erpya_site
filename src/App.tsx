@@ -3,6 +3,7 @@ import { I18nProvider } from './lib/i18n'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Adempiere from './pages/Adempiere'
+import Odoo from './pages/Odoo'
 import Servicio from './pages/Servicio'
 import Nube from './pages/Nube'
 import Nosotros from './pages/Nosotros'
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="adempiere" element={<Adempiere />} />
+            <Route path="odoo" element={<Odoo />} />
             <Route path="nube" element={<Nube />} />
             <Route path="nosotros" element={<Nosotros />} />
             <Route path="erp-ai-knowledge" element={<ErpAiKnowledge />} />
