@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
+import { useI18n } from '../lib/i18n'
 
 export default function WhatsAppButton() {
+  const { t } = useI18n()
   return (
     <motion.a
       href="https://wa.me/584122223824"
@@ -12,7 +14,7 @@ export default function WhatsAppButton() {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-      aria-label="Contactar por WhatsApp"
+      aria-label={t('common', 'whatsappLabel')}
     >
       <svg
         width="32"
