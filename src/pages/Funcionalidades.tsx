@@ -1,6 +1,7 @@
 import { BarChart3, Users, Settings, Database, Activity, Package, Briefcase, ShoppingCart, ShieldCheck } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { useI18n } from '../lib/i18n'
 
 function FeatureCard({ title, description, icon: Icon, delay = 0, href }: { title: string, description: string, icon: any, delay?: number, href: string }) {
   return (
@@ -23,6 +24,100 @@ function FeatureCard({ title, description, icon: Icon, delay = 0, href }: { titl
 }
 
 export default function Funcionalidades() {
+  const { t, lang } = useI18n()
+  const features = [
+    {
+      href: '/gestion-financiera',
+      icon: BarChart3,
+      titleEs: 'Gestión Financiera',
+      titleEn: 'Financial Management',
+      descEs: 'Potente funcionalidad que puede ser utilizada por una empresa pequeña o gran organización. Controle sus finanzas de manera exacta, sin necesidad de cambiar su plataforma cuando crezca.',
+      descEn: 'Powerful functionality for small or large companies. Control your finances precisely without changing platforms as you grow.',
+      delay: 0.1,
+    },
+    {
+      href: '/gestion-de-compras',
+      icon: ShoppingCart,
+      titleEs: 'Gestión de Compras',
+      titleEn: 'Purchasing Management',
+      descEs: 'Obtenga visión general y detallada. Una vez definidas las condiciones con el proveedor, los usuarios operan y ADempiere se encarga utilizar los precios y documentos involucrados.',
+      descEn: 'Gain general and detailed visibility. Once vendor terms are set, users operate while ADempiere applies the prices and documents automatically.',
+      delay: 0.2,
+    },
+    {
+      href: '/gestion-de-ventas',
+      icon: Activity,
+      titleEs: 'Gestión de Ventas',
+      titleEn: 'Sales Management',
+      descEs: 'Ejecute las ventas expeditamente y sin equivocaciones. Defina reglas por cliente y el sistema controlará listas de precio, costos, y automatización contable.',
+      descEn: 'Execute sales quickly and accurately. Define customer rules and the system will control price lists, costs, and accounting automation.',
+      delay: 0.3,
+    },
+    {
+      href: '/gestion-de-capital-humano',
+      icon: Users,
+      titleEs: 'Capital Humano',
+      titleEn: 'Human Capital',
+      descEs: 'Herramientas necesarias para hacer más transparente la relación con el personal. Gestione todo lo referente a empleados, asistencia, préstamos, compras y remuneraciones.',
+      descEn: 'Tools needed to make staff relationships more transparent. Manage employees, attendance, loans, purchases and payroll.',
+      delay: 0.4,
+    },
+    {
+      href: '/gestion-de-manufactura',
+      icon: Database,
+      titleEs: 'Gestión de Manufactura',
+      titleEn: 'Manufacturing Management',
+      descEs: 'Integre compras, administración, finanzas, logística y rentabilidad industrial. Tenga una operación más controlada, planificada y segura.',
+      descEn: 'Integrate purchasing, administration, finance, logistics and industrial profitability. Achieve a more controlled, planned and secure operation.',
+      delay: 0.5,
+    },
+    {
+      href: '/gestion-del-cliente-crm',
+      icon: Activity,
+      titleEs: 'Gestión de Clientes (CRM)',
+      titleEn: 'Customer Management (CRM)',
+      descEs: 'Dé seguimiento a su relación con clientes y prospectos de forma fácil y rápida. Controle todas las etapas del embudo de ventas y soporte.',
+      descEn: 'Track customer and prospect relationships easily and quickly. Control all stages of the sales and support funnel.',
+      delay: 0.6,
+    },
+    {
+      href: '/gestion-de-distribucion',
+      icon: Package,
+      titleEs: 'Gestión de Distribución',
+      titleEn: 'Distribution Management',
+      descEs: 'Automatiza sus flujos, minimizando errores en el suministro, cumplimiento de pedidos, seguimiento de inventario multi-almacén y logística.',
+      descEn: 'Automate your workflows, minimizing errors in supply, order fulfillment, multi-warehouse inventory tracking and logistics.',
+      delay: 0.7,
+    },
+    {
+      href: '/gestion-de-activos',
+      icon: ShieldCheck,
+      titleEs: 'Gestión de Activos',
+      titleEn: 'Asset Management',
+      descEs: 'Planifica, organiza y ejecuta actividades de mantenimiento correctivo y preventivo, incluyendo inventarios físicos y depreciación.',
+      descEn: 'Plan, organize and execute corrective and preventive maintenance activities, including physical inventories and depreciation.',
+      delay: 0.8,
+    },
+    {
+      href: '/gestion-de-servicios',
+      icon: Settings,
+      titleEs: 'Gestión de Servicios',
+      titleEn: 'Service Management',
+      descEs: 'Solución de punta a punta tanto para Servicios Profesionales, como Reparaciones o Servicios por Proyecto. Visión 360 del ciclo de ticket.',
+      descEn: 'End-to-end solution for Professional Services, Repairs or Project Services. 360 view of the ticket lifecycle.',
+      delay: 0.9,
+    },
+    {
+      href: '/gestion-de-proyectos',
+      icon: Briefcase,
+      titleEs: 'Gestión de Proyectos',
+      titleEn: 'Project Management',
+      descEs: 'Gestiona la totalidad del ciclo de vida útil del proyecto. Tiempos, gastos, materiales consumidos y facturación al cliente.',
+      descEn: 'Manage the full project lifecycle. Time, expenses, consumed materials and client billing.',
+      delay: 1.0,
+    },
+  ]
+
   return (
     <div className="pt-32 pb-24 px-6 min-h-screen">
       <div className="max-w-7xl mx-auto">
@@ -32,7 +127,7 @@ export default function Funcionalidades() {
             animate={{ opacity: 1, y: 0 }}
             className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground"
           >
-            Funcionalidades Integrales
+            {t('funcionalidades', 'title')}
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -40,81 +135,21 @@ export default function Funcionalidades() {
             transition={{ delay: 0.1 }}
             className="text-muted-foreground text-lg max-w-3xl"
           >
-            Administre tanto sus operaciones internas con empleados como las externas con sus clientes y proveedores, potenciando la eficiencia de su empresa de clase mundial.
+            {t('funcionalidades', 'sub')}
           </motion.p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <FeatureCard 
-            href="/gestion-financiera"
-            icon={BarChart3}
-            title="Gestión Financiera" 
-            description="Potente funcionalidad que puede ser utilizada por una empresa pequeña o gran organización. Controle sus finanzas de manera exacta, sin necesidad de cambiar su plataforma cuando crezca."
-            delay={0.1}
-          />
-          <FeatureCard 
-            href="/gestion-de-compras"
-            icon={ShoppingCart}
-            title="Gestión de Compras" 
-            description="Obtenga visión general y detallada. Una vez definidas las condiciones con el proveedor, los usuarios operan y ADempiere se encarga utilizar los precios y documentos involucrados."
-            delay={0.2}
-          />
-          <FeatureCard 
-            href="/gestion-de-ventas"
-            icon={Activity}
-            title="Gestión de Ventas" 
-            description="Ejecute las ventas expeditamente y sin equivocaciones. Defina reglas por cliente y el sistema controlará listas de precio, costos, y automatización contable."
-            delay={0.3}
-          />
-          <FeatureCard 
-            href="/gestion-de-capital-humano"
-            icon={Users}
-            title="Capital Humano" 
-            description="Herramientas necesarias para hacer más transparente la relación con el personal. Gestione todo lo referente a empleados, asistencia, préstamos, compras y remuneraciones."
-            delay={0.4}
-          />
-          <FeatureCard 
-            href="/gestion-de-manufactura"
-            icon={Database}
-            title="Gestión de Manufactura" 
-            description="Integre compras, administración, finanzas, logística y rentabilidad industrial. Tenga una operación más controlada, planificada y segura."
-            delay={0.5}
-          />
-          <FeatureCard 
-            href="/gestion-del-cliente-crm"
-            icon={Activity}
-            title="Gestión de Clientes (CRM)" 
-            description="Dé seguimiento a su relación con clientes y prospectos de forma fácil y rápida. Controle todas las etapas del embudo de ventas y soporte."
-            delay={0.6}
-          />
-          <FeatureCard 
-            href="/gestion-de-distribucion"
-            icon={Package}
-            title="Gestión de Distribución" 
-            description="Automatiza sus flujos, minimizando errores en el suministro, cumplimiento de pedidos, seguimiento de inventario multi-almacén y logística."
-            delay={0.7}
-          />
-          <FeatureCard 
-            href="/gestion-de-activos"
-            icon={ShieldCheck}
-            title="Gestión de Activos" 
-            description="Planifica, organiza y ejecuta actividades de mantenimiento correctivo y preventivo, incluyendo inventarios físicos y depreciación."
-            delay={0.8}
-          />
-          <FeatureCard 
-            href="/gestion-de-servicios"
-            icon={Settings}
-            title="Gestión de Servicios" 
-            description="Solución de punta a punta tanto para Servicios Profesionales, como Reparaciones o Servicios por Proyecto. Visión 360 del ciclo de ticket."
-            delay={0.9}
-          />
-          <FeatureCard 
-            href="/gestion-de-proyectos"
-            icon={Briefcase}
-            title="Gestión de Proyectos" 
-            description="Gestiona la totalidad del ciclo de vida útil del proyecto. Tiempos, gastos, materiales consumidos y facturación al cliente."
-            delay={1.0}
-          />
+          {features.map((feature) => (
+            <FeatureCard
+              key={feature.titleEs}
+              href={feature.href}
+              icon={feature.icon}
+              title={lang === 'en' ? feature.titleEn : feature.titleEs}
+              description={lang === 'en' ? feature.descEn : feature.descEs}
+              delay={feature.delay}
+            />
+          ))}
         </div>
       </div>
     </div>
