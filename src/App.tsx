@@ -8,11 +8,11 @@ import Servicio from './pages/Servicio'
 import Nube from './pages/Nube'
 import Nosotros from './pages/Nosotros'
 import ErpAiKnowledge from './pages/ErpAiKnowledge'
+import VenezuelaLanding from './pages/VenezuelaLanding'
+import { landings } from './content/venezuela'
 
-function App() {
+export function SiteRoutes() {
   return (
-    <I18nProvider>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -21,13 +21,16 @@ function App() {
             <Route path="nube" element={<Nube />} />
             <Route path="nosotros" element={<Nosotros />} />
             <Route path="erp-ai-knowledge" element={<ErpAiKnowledge />} />
+            {landings.map(page => <Route key={page.slug} path={page.slug} element={<VenezuelaLanding page={page} />} />)}
             {/* Catch-all for service detail pages */}
             <Route path=":serviceId" element={<Servicio />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    </I18nProvider>
   )
+}
+
+function App() {
+  return <I18nProvider><BrowserRouter basename={import.meta.env.BASE_URL}><SiteRoutes /></BrowserRouter></I18nProvider>
 }
 
 export default App

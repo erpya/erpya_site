@@ -9,6 +9,7 @@ import {
 } from 'lucide-react'
 import { useI18n } from '../lib/i18n'
 import WhatsAppButton from './WhatsAppButton'
+import { landings } from '../content/venezuela'
 import erpyaLogoUrl from '../assets/ERP-logotipo-H-color.png'
 
 type MenuItem = {
@@ -30,6 +31,8 @@ type MenuSection = {
 
 const SERVICIOS_MENU: MenuSection[] = [
   { section: 'ERPs', sectionEn: 'ERPs', items: [
+    { to: '/erp-venezuela', labelEs: 'ERP en Venezuela', labelEn: 'ERP in Venezuela', descEs: 'Entrada y expansión empresarial', descEn: 'Market entry and business expansion', Icon: Building2 },
+    { to: '/invest-in-venezuela-erp', labelEs: 'Invertir en Venezuela', labelEn: 'Investing in Venezuela', descEs: 'Plataforma tecnológica local (EN)', descEn: 'Local technology platform', Icon: Globe },
     { to: '/adempiere',  labelEs: 'ADempiere', labelEn: 'ADempiere', descEs: 'ERP open-source de clase mundial', descEn: 'World-class open-source ERP', Icon: BarChart3 },
     { to: '/odoo',       labelEs: 'Odoo',      labelEn: 'Odoo',      descEs: 'Suite empresarial todo-en-uno',     descEn: 'All-in-one business suite',     Icon: Settings },
   ]},
@@ -162,6 +165,7 @@ export default function Layout() {
 
   return (
     <div className="min-h-screen bg-background font-sans flex flex-col" style={{ transition: 'background-color 300ms ease' }}>
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:rounded focus:bg-background focus:p-3 focus:text-foreground">{lang === 'en' ? 'Skip to content' : 'Ir al contenido'}</a>
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 px-6 py-3 ${
         floatingOverHero
           ? 'bg-[#071329]/78 backdrop-blur-md border-b border-white/[0.08] shadow-[0_14px_40px_rgba(2,6,23,0.22)]'
@@ -235,7 +239,7 @@ export default function Layout() {
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden mt-3 pb-4 border-t border-border pt-4 flex flex-col gap-2 text-sm font-medium text-muted-foreground bg-background">
+          <div className="md:hidden max-h-[75vh] overflow-y-auto mt-3 pb-4 border-t border-border pt-4 flex flex-col gap-2 text-sm font-medium text-muted-foreground bg-background">
             {SERVICIOS_MENU.map(group => (
               <div key={group.section}>
                 <p className="text-[10px] font-bold uppercase tracking-widest text-primary px-2 py-1">{lang === 'en' ? group.sectionEn : group.section}</p>
@@ -250,7 +254,7 @@ export default function Layout() {
         )}
       </header>
 
-      <main className="flex-1 w-full">
+      <main id="main-content" tabIndex={-1} className="flex-1 w-full">
         <Outlet />
       </main>
 
@@ -380,6 +384,13 @@ function Footer() {
               </div>
             </div>
           ))}
+        </div>
+
+        <div className="mt-8 border-t border-border pt-6">
+          <h2 className="mb-3 text-sm font-bold text-foreground">{lang === 'en' ? 'Operating and investing in Venezuela' : 'Operar e invertir en Venezuela'}</h2>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {landings.map(page => <Link key={page.slug} to={`/${page.slug}`} lang={page.lang} className="text-xs leading-relaxed text-muted-foreground hover:text-primary">{page.h1}</Link>)}
+          </div>
         </div>
 
         <div className="mt-10 pt-5 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-2 text-[11px] text-muted-foreground/60">
