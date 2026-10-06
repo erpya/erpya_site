@@ -71,3 +71,13 @@
   will-change: transform;
 }
 
+
+/* Keep fixed-language campaign pages readable at small widths and with reduced motion. */
+.venezuela-landing { overflow-wrap: anywhere; }
+.venezuela-landing a:focus-visible, .venezuela-landing summary:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .venezuela-landing [style] { opacity: 1 !important; transform: none !important; }
+}

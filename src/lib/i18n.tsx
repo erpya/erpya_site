@@ -267,8 +267,14 @@ const I18nContext = createContext<I18nContextType>({
   t: () => '',
 })
 
-export function I18nProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(() => (localStorage.getItem('erpya_lang') as Lang) || 'es')
+export function I18nProvider({ children, initialLang }: { children: ReactNode; initialLang?: Lang }) {
+  const [lang, setLangState] = useState<Lang>(() => {
+    if (initialLang) return initialLang
+    if (typeof window === 'undefined') return 'es'
+    if (['/invest-in-venezuela-erp', '/sap-alternative-venezuela', '/venezuela-erp-localization', '/oil-gas-erp-venezuela'].includes(window.location.pathname.replace(/\/$/, ''))) return 'en'
+    const saved = localStorage.getItem('erpya_lang')
+    return saved === 'en' ? 'en' : 'es'
+  })
 
   useEffect(() => {
     document.documentElement.lang = lang
